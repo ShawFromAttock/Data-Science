@@ -1,25 +1,17 @@
-# What are Selectors?
-When we are scraping the web pages, we need to extract a certain part of the HTML source by using the mechanism called selectors, achieved by using either XPath or CSS expressions. Selectors are built upon the lxml library, which processes the XML and HTML in Python language.
-```python
-import scrapy
+# What is Web Scraping?
+Web scraping is the process of using bots to extract content and data from a website. Unlike screen scraping, which only copies pixels displayed onscreen, web scraping extracts underlying HTML code and, with it, data stored in a database. The scraper can then replicate entire website content elsewhere.
 
+# Uses:
+Web scraping is used in a variety of digital businesses that rely on data harvesting. Legitimate use cases include:
 
-class MySpider(scrapy.Spider):
-    name = "random quotes"
-    url = ["https://quotes.toscrape.com/"]
+Search engine bots crawling a site, analyzing its content and then ranking it.
+Price comparison sites deploying bots to auto-fetch prices and product descriptions for allied seller websites.
+Market research companies using scrapers to pull data from forums and social media (e.g., for sentiment analysis).
 
-    def parse(self, response):
-        title = response.css("title::text").extract()
-        yield {"titletext" : title}
-```
-# Robots.txt:
-Robots.txt is just a text file that the robots respect, it cannot forbid you from doing anything. A good web spider will first read the robots. txt file and adhere to the rule, though it's not compulsory. Conducting a scrapy crawl command for a project will first look for the robots.
-# Environment:
-```python
-PS C:\Users\zaina\PycharmProjects\sheesh> scrapy startproject gg
-New Scrapy project 'gg', using template directory 'C:\Users\zaina\AppData\Local\Programs\Python\Python310\lib\site-packages\scrapy\templates\project', created in:
+# Scraper tools and bots
+Web scraping tools are software (i.e., bots) programmed to sift through databases and extract information. A variety of bot types are used, many being fully customizable to:
 
-You can start your first spider with:
-    cd gg
-    scrapy genspider example example.com
-```
+Recognize unique HTML site structures
+Extract and transform content
+Store scraped data
+Extract data from APIs
