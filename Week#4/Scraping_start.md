@@ -13,6 +13,10 @@ class Quote_spider(scrapy.Spider):
         title = response.css('title::text').extract()
         yield {"Titletext" : title }
 ```
+
+# Selectors:
+When you are scraping the web pages, you need to extract a certain part of the HTML source by using the mechanism called selectors, achieved by using either XPath or CSS expressions. Selectors are built upon the lxml library, which processes the XML and HTML in Python language.
+
 Now we can use both `css` and `xpath` to extract data from the website.
 
 `using xpath`
